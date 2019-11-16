@@ -7,6 +7,7 @@ from second.core.sample_ops import DataBaseSamplerV2
 
 
 def build(sampler_config):
+    #import pdb; pdb.set_trace()
     cfg = sampler_config
     groups = list(cfg.sample_groups)
     prepors = [
@@ -20,6 +21,7 @@ def build(sampler_config):
     info_path = cfg.database_info_path
     with open(info_path, 'rb') as f:
         db_infos = pickle.load(f)
+
     grot_range = list(grot_range)
     if len(grot_range) == 0:
         grot_range = None

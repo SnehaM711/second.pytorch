@@ -18,7 +18,20 @@ def nuscenes_data_prep(root_path, version, dataset_name, max_sweeps=10):
     name = "infos_train.pkl"
     if version == "v1.0-test":
         name = "infos_test.pkl"
+    return
     create_groundtruth_database(dataset_name, root_path, Path(root_path) / name)
 
 if __name__ == '__main__':
+    import os
+    os.environ["MKL_NUM_THREADS"] = "24"
+    os.environ["NUMEXPR_NUM_THREADS"] = "24"
+    os.environ["OMP_NUM_THREADS"] = "24"
     fire.Fire()
+
+
+'''
+Run this script as, from parent directory only:
+python create_data.py nuscenes_data_prep --root_path=../../data/nuscenes/v1.0-mini  --version="v1.0-mini" --dataset_name="NuScenesDataset" --max_sweeps=10
+
+
+'''

@@ -22,6 +22,7 @@ def create_groundtruth_database(dataset_class_name,
                                 lidar_only=False,
                                 bev_only=False,
                                 coors_range=None):
+    #import pdb; pdb.set_trace()
     dataset = get_dataset_class(dataset_class_name)(
         info_path=info_path,
         root_path=data_path,
@@ -61,11 +62,15 @@ def create_groundtruth_database(dataset_class_name,
         for i in range(num_obj):
             filename = f"{image_idx}_{names[i]}_{i}.bin"
             filepath = database_save_path / filename
+
             gt_points = points[point_indices[:, i]]
 
             gt_points[:, :3] -= gt_boxes[i, :3]
-            with open(filepath, 'w') as f:
-                gt_points.tofile(f)
+
+            if not filepath.exists():
+                with open(filepath, 'w') as f:
+                    gt_points.tofile(f)
+
             if (used_classes is None) or names[i] in used_classes:
                 if relative_path:
                     db_path = str(database_save_path.stem + "/" + filename)
