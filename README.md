@@ -75,6 +75,7 @@ python create_data.py nuscenes_data_prep --root_path=LYFT_TEST_DATASET_ROOT  --v
 
 `LYFT_TRAINVAL_DATASET_ROOT` are full path to train set of the dataset, similaryly for `LYFT_TEST_DATASET_ROOT`.
 
+Prepare `gt_data_train.json/gt_data_val.json` files using [prepare.ipynb](https://github.com/pyaf/second.pytorch/blob/master/second/notebooks/prepare.ipynb), follow the comments.
 
 Rest of this readme is from original second implementation.
 
