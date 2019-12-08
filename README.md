@@ -1,6 +1,6 @@
-# SECOND for Lyft object detection
+# SECOND for Lyft 3d object detection challenge
 
-This is the source code for my 20th place solution in Kaggle's [Lyft 3d Object Detection Challenge](https://www.kaggle.com/c/3d-object-detection-for-autonomous-vehicles/).
+This is the source code for my 19th place solution in Kaggle's [Lyft 3d Object Detection Challenge](https://www.kaggle.com/c/3d-object-detection-for-autonomous-vehicles/).
 
 I used original [second.pytorch](https://github.com/traveller59/second.pytorch) and modified it to get it working for the lyft competition.
 
